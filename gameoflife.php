@@ -56,5 +56,7 @@
 					header('Location: signup.php');
 				}			
 	?>
+
+	<script type="text/javascript" src="gamescript.js"></script>
 </body>
 </html>

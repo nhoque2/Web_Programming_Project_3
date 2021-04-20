@@ -5,8 +5,9 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<title>Game of Life</title>
 	<link rel="stylesheet" type="text/css" href="gamestyle.css">
 	
@@ -16,16 +17,13 @@
 	<h2><?php echo "Welcome ".$_SESSION['Username']."!";?></h2>
 
 	<label>Choose a grid size:</label>
-	<select name="grid-size" id="grid-size">
-		<option value="">---</option>
-		<option value="1">1</option>
+	
+	<select name="grid_size" id="grid_size">
+		<option value="0">---</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
@@ -35,28 +33,27 @@
 	
 	<button type="button" id="startbutton" onclick="startGame()">Start</button>
 	<button type="button" id="stopbutton" onclick="stopGame()">Stop</button>
-	<button type="button" id="stepbutton" onclick="inc1()">Increment 1 Generations</button>
+	<button type="button" id="stepbutton" onclick="inc1()">Increment 1 Generation</button>
 	<button type="button" id="step23" onclick="inc23()">Increment 23 Generations</button>
 	<button type="button" id="reset" onclick="resetGame()">Reset</button>
 	<button type="button" id="patternButton" onclick="cPattern()">Change pattern</button>
 
-	<canvas id="canvas"></canvas>
+	<div id="game_canvas"></div>
 	
 	<br>
 	
 	<form method="post" name="Logout">
-				<input type="submit" name="logout" value="Logout">
+		<input type="submit" name="logout" value="Logout">
 	</form>
 	<?php 
-				if (isset($_POST['logout'])) { 
-					setcookie(session_name(), '', 100);
-					session_unset();
-					session_destroy();
-					$_SESSION = array();
-					header('Location: signup.php');
-				}			
+		if (isset($_POST['logout'])) { 
+			setcookie(session_name(), '', 100);
+			session_unset();
+			session_destroy();
+			$_SESSION = array();
+			header('Location: signup.php');
+		}			
 	?>
-
-	<script type="text/javascript" src="gamescript.js"></script>
+	<script type="text/javascript" src="gamescript.js"></script>	
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 //draws grid with selected grid size
 function drawGrid(){
 	var lastClicked;
@@ -35,11 +36,62 @@ function createGrid(rows, cols, callback){
     return grid;
 }
 
+var cells;
+function createCells(){
+	var gridSize = document.getElementById("grid_size").value;
+	//console.log(gridSize);
+	//array size may need adjustment
+	let arr = new Array(gridSize*gridSize);
+	for(let x = 0; x < gridSize*gridSize; x++){
+		let columns = new Array(gridSize*gridSize);
+		for (let y = 0; y < gridSize*gridSize; y++) {
+			columns[y] = false;
+		}
+		arr[x] = columns;
+	}
+	return arr;
+}
+function randomCells(){
+
+}
+
+function drawCells() {
+
+}
+
+function step() {
+
+}
+
+/*function getNeighbors(x, y){
+	let count = 0;
+	for (let i = -1; i < 2; i++) {
+		for (let j = -1; j < 2; j++) {
+			if(i === 0 && j === 0) {
+				continue;
+			}
+			if(x+i < 0 || x+i > resolution - 1){
+				continue;
+			}
+
+			if(y+j < 0 || y+j > resolution - 1){
+				continue;
+			}
+			if (cells[x+i][y+j]) {
+				count++;
+			}
+		}
+	}
+	return count;
+}*/
+
 function startGame(){
 	drawGrid();
+	createCells();
 }
 
 //resets game
 function resetGame(){
 	 document.getElementById("game_canvas").innerHTML = "";
 }
+

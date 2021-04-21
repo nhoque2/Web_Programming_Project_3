@@ -224,9 +224,27 @@ function inc23(){
 	}
     clearTimeout(timer);
 }
-/*unfinished 
+
 function cPattern(){
-    let p = document.getElementById('1_0');
+    document.getElementById('0_0').className = "alive";
+    document.getElementById('0_1').className="alive";
+    document.getElementById('1_0').className="alive";
+    document.getElementById('1_1').className="alive";
+    //cell_clicked();
+}
+
+function bPattern(){
+   document.getElementById('1_0').className="alive";
+    document.getElementById('1_1').className="alive";
+    document.getElementById('1_2').className="alive";
     
 }
-*/
+
+function tPattern(){
+    document.getElementById('2_0').className="alive";
+    document.getElementById('2_1').className="alive";
+    document.getElementById('2_2').className="alive";
+    document.getElementById('1_1').className="alive";
+    document.getElementById('1_2').className="alive";
+    document.getElementById('1_3').className="alive";
+}

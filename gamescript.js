@@ -1,4 +1,4 @@
-const intervalID = setInterval(step, 500);
+//const intervalID = setInterval(step, 500);
 
 //draws grid with selected grid size
 function drawGrid(){
@@ -53,11 +53,26 @@ function createCells(){
 	return arr;
 }
 function randomCells(){
-
+	var gridSize = document.getElementById('grid_size');
+	for(let y=0; y < gridSize*gridSize; y++){
+		for(let x=0; x < gridSize*gridSize; x++){
+			if(Math.random() < 0.5) {
+				cells[x][y] = true;
+			}
+		}
+	}
 }
 
 function drawCells() {
-
+	var gridSize = document.getElementById('grid_size').value;
+	var tableCells = document.getElementsByTagName('tr').style.backgroundColor;
+	for (let y = 0; y < gridSize*gridSize; y++) {
+		for (let x = 0; x < gridSize*gridSize; x++) {
+			if (cells[x][y]) {
+				tableCells.style.backgroundColor='black';
+			}
+		}
+	}
 }
 //grid size may need adjustment
 //drawCells needs to be added to see results
@@ -78,7 +93,8 @@ function step() {
 			}
 		}
 		cells = newCells;
-		//drawCells();
+		drawCells();
+
 }
 //grid size may need adjustment
 //
@@ -98,6 +114,7 @@ function getNeighbors(x, y){
 				continue;
 			}
 			if (cells[x+i][y+j]) {
+				console.log(cells[x][y].toString());
 				count++;
 			}
 		}
@@ -109,7 +126,8 @@ function getNeighbors(x, y){
 function startGame(){
 	drawGrid();
 	cells = createCells();
-	console.log('cells' + cells);
+	randomCells();
+	//console.log('cells' + cells);
 	step();
 }
 

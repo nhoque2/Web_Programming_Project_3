@@ -212,13 +212,21 @@ function resetGame(){
 }
 
 function inc1(){
-	step();
+	evolve();
+    clearTimeout(timer);
 }
 
 function inc23(){
 	let a = 1;
 	while(a < 24) {
-		step();
+		evolve();
 		a++;
 	}
+    clearTimeout(timer);
 }
+/*unfinished 
+function cPattern(){
+    let p = document.getElementById('1_0');
+    
+}
+*/

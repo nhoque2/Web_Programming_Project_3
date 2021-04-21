@@ -37,7 +37,9 @@
 	<button type="button" id="step" onclick="inc1()">Increment 1 Generation</button>
 	<button type="button" id="step23" onclick="inc23()">Increment 23 Generations</button>
 	<button type="button" id="reset" onclick="resetGame()">Reset</button>
-	<button type="button" id="pattern" onclick="cPattern()">Change pattern</button>
+	<button type="button" id="pattern" onclick="cPattern()">Block pattern</button>
+	<button type="button" id="blinker" onclick="bPattern()">Blinker pattern</button>
+	<button type="button" id="blinker" onclick="tPattern()">Toad pattern</button>
 
 	<div id="game_canvas"></div>
 	

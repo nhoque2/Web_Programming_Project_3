@@ -31,12 +31,13 @@
 		<option value="10">10</option>
 	</select>
 	
-	<button type="button" id="startbutton" onclick="startGame()">Start</button>
-	<button type="button" id="stopbutton" onclick="stopGame()">Stop</button>
-	<button type="button" id="stepbutton" onclick="inc1()">Increment 1 Generation</button>
+	<button type="button" id="draw" onclick="drawGrid()">Draw Grid</button>
+	<button type="button" id="start" onclick="startGame()">Start</button>
+	<button type="button" id="stop" onclick="stopGame()">Stop</button>
+	<button type="button" id="step" onclick="inc1()">Increment 1 Generation</button>
 	<button type="button" id="step23" onclick="inc23()">Increment 23 Generations</button>
 	<button type="button" id="reset" onclick="resetGame()">Reset</button>
-	<button type="button" id="patternButton" onclick="cPattern()">Change pattern</button>
+	<button type="button" id="pattern" onclick="cPattern()">Change pattern</button>
 
 	<div id="game_canvas"></div>
 	
